@@ -14,7 +14,7 @@ const TodoList = (props: IProps) => {
   }
 
   return (
-    <List >
+    <List sx={{ flexGrow: { xs: 1 } }}>
       {todos && todos.map(todo =>
         <ListItem key={todo.id} secondaryAction={
           <IconButton edge="end" onClick={deleteTodo(todo.id)}>

@@ -26,9 +26,9 @@ const Filter = (props: IProps) => {
 
 
   return (
-    <Box display='flex' sx={{ alignItems: 'center' }}>
-      <Typography sx={{ pr: 1 }}>{countUnSuccess ? countUnSuccess + ' items left' : 'all completed'}</Typography>
-      <ButtonGroup disableElevation size='small' sx={{ pr: 1 }}>
+    <Box display='flex' sx={{ alignItems: 'center', justifyContent: {xs: 'center', sm: 'flex-start'}, flexDirection: {xs: 'column', sm: 'row'} }}>
+      <Typography sx={{ p: 1 }}>{countUnSuccess ? countUnSuccess + ' items left' : 'all completed'}</Typography>
+      <ButtonGroup disableElevation size='small' sx={{ p: 1 }}>
         {['All', 'Active', 'Completed'].map(input =>
           <Button key={v4()} value={input} disabled={state.length === 0} onClick={handleChange(input)} variant={input === filter ? 'contained' : 'outlined'}>{input}</Button>
         )}
